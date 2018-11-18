@@ -185,8 +185,7 @@
     "build:webui": "npm run pre:webpack && cross-env BABEL_ENV=ui webpack --config tools/webpack.prod.config.babel.js",
     "build:docker": "docker build -t verdaccio . --no-cache",
     "build:docker:rpi": "docker build -f Dockerfile.rpi -t verdaccio:rpi .",
-    "heroku-prebuild": "npm i -g verdaccio && npm i -g pm2",
-    "start": "verdaccio"
+    "heroku-postbuild": "npm i -g verdaccio && npm i -g pm2"
   },
   "engines": {
     "node": ">=6.12.0",
