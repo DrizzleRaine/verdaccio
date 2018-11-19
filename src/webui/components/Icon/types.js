@@ -13,12 +13,13 @@ export interface IIconsMap {
   india: string;
   earth: string;
   verdaccio: string;
+  [key: string]: string;
 }
 
 export interface IProps {
   name: $Keys<typeof IIconsMap>;
   className?: string;
-  onClick?: (event: SyntheticMouseEvent<SVGAElement>) => void;
+  onClick?: (event: SyntheticMouseEvent<SVGElement | HTMLSpanElement>) => void;
   size?: 'sm' | 'md';
   pointer?: boolean;
   img?: boolean;

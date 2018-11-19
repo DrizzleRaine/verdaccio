@@ -21,7 +21,7 @@ const getSize = (size: string) => {
   }
 };
 
-const commonStyle = ({ size, pointer }: IProps) => css`
+const commonStyle = ({ size = 'sm', pointer }: IProps) => css`
   && {
     padding: 0 5px;
     display: inline-block;

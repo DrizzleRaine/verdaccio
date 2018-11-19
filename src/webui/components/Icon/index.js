@@ -21,7 +21,7 @@ import spain from './img/spain.svg';
 import earth from './img/earth.svg';
 import verdaccio from './img/verdaccio.svg';
 
-export const Icons: IIconsMap = {
+export const Icons: $Shape<IIconsMap> = {
   // flags
   brazil,
   spain,

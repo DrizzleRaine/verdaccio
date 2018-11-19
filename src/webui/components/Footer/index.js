@@ -4,10 +4,12 @@
  */
 
 import React from 'react';
+import type { Element } from 'react';
+
 import { version } from '../../../../package.json';
 import { Wrapper, Left, Right, Earth, Flags, Love, Flag, Logo, Inner, ToolTip } from './styles';
 
-const Footer = (): Node => (
+const Footer = (): Element<Wrapper> => (
   <Wrapper>
     <Inner>
       <Left>
