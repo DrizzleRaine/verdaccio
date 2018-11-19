@@ -3,11 +3,11 @@
  * @flow
  */
 
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { version } from '../../../../package.json';
 import { Wrapper, Left, Right, Earth, Flags, Love, Flag, Logo, Inner, ToolTip } from './styles';
 
-const Footer = (): Node => (
+const Footer = (): ReactElement<HTMLDivElement> => (
   <Wrapper>
     <Inner>
       <Left>

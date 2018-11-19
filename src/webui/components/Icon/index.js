@@ -3,10 +3,12 @@
  * @flow
  */
 
-import React, { ReactElement } from 'react';
+import React from 'react';
+import type { Node } from 'react';
+
 import capitalize from '../../utils/capitalize';
 import { SVG, Img, ImgWrapper } from './styles';
-import { IProps, IconsMap } from './types';
+import { IProps, IIconsMap } from './types';
 
 import brazil from './img/brazil.svg';
 import china from './img/china.svg';
@@ -19,7 +21,7 @@ import spain from './img/spain.svg';
 import earth from './img/earth.svg';
 import verdaccio from './img/verdaccio.svg';
 
-export const Icons: IconsMap = {
+export const Icons: IIconsMap = {
   // flags
   brazil,
   spain,
@@ -33,24 +35,18 @@ export const Icons: IconsMap = {
   verdaccio,
 };
 
-const Icon = ({ className, name, img, ...props }: IProps): ReactElement<HTMLOrSVGElement> => {
+const Icon = ({ className, name, size = 'sm', img = false, pointer = false, ...props }: IProps): Node => {
   const title = capitalize(name);
   return img ? (
-    <ImgWrapper className={className} title={title} {...props}>
+    <ImgWrapper className={className} size={size} title={title} pointer={pointer} {...props}>
       <Img src={Icons[name]} alt={title} />
     </ImgWrapper>
   ) : (
-    <SVG className={className} {...props}>
+    <SVG className={className} size={size} pointer={pointer} {...props}>
       <title>{title}</title>
       <use xlinkHref={`${Icons[name]}#${name}`} />
     </SVG>
   );
-};
-
-Icon.defaultProps = {
-  size: 'sm',
-  img: false,
-  pointer: false,
 };
 
 export default Icon;

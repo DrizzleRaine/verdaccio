@@ -18,7 +18,7 @@ export interface IIconsMap {
 export interface IProps {
   name: $Keys<typeof IIconsMap>;
   className?: string;
-  onClick?: (event: SyntheticMouseEvent<HTMLOrSVGElement>) => void;
+  onClick?: (event: SyntheticMouseEvent<SVGAElement>) => void;
   size?: 'sm' | 'md';
   pointer?: boolean;
   img?: boolean;

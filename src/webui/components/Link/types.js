@@ -3,7 +3,7 @@
  * @flow
  */
 
-import { Node } from 'react';
+import type { Node } from 'react';
 
 export interface IProps {
   children?: Node;
